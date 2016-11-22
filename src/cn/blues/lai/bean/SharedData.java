@@ -10,7 +10,7 @@ public class SharedData {
 	public Integer consumer(){
 		try {
 			Integer take = queue.take();
-			System.out.println("comsumer data:"+take);
+			System.out.println("ThreadName:"+Thread.currentThread().getName()+",comsumer data:"+take);
 			return take;
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -20,7 +20,7 @@ public class SharedData {
 	
 	public void produce(Integer number){
 		try {
-			System.out.println("produce data:"+number);
+			System.out.println("ThreadName:"+Thread.currentThread().getName()+",produce data:"+number);
 			queue.put(number);
 		} catch (InterruptedException e) {
 			e.printStackTrace();

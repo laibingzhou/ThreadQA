@@ -9,8 +9,8 @@ public class ConsumerAndProducer {
 	public static void main(String[] args) {
 		SharedData data=new SharedData();
 		new Thread(new ComsumerRunnable(data)).start();
+		new Thread(new ComsumerRunnable(data)).start();
 		new Thread(new ProducerRunnable(data)).start();
-		
 	}
 
 }
